@@ -72,7 +72,25 @@ const init = async () => {
       return newResponse;
     }
 
-    return response.continue || response;
+    if (response.isBoom) {
+      const newResponse = h.response({
+        status: 'fail',
+        message: response.message,
+      });
+      newResponse.code(response.output.statusCode);
+      return newResponse;
+    }
+
+    if (request.payload && request.payload.length > 1000000) {
+      const newResponse = h.response({
+        status: 'fail',
+        message: 'Payload content length greater than maximum allowed: 1000000',
+      });
+      newResponse.code(413);
+      return newResponse;
+    }
+
+    return h.continue;
   });
 
   await server.start();

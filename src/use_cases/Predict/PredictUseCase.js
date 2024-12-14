@@ -21,7 +21,7 @@ class PredictUseCase {
 
       const result = resultScore > 50 ? 'Cancer' : 'Non-cancer';
       const suggestion =
-        result === 'Cancer' ? 'Segera periksa ke dokter!' : 'Anda sehat!';
+        result === 'Cancer' ? 'Segera periksa ke dokter!' : 'Penyakit kanker tidak terdeteksi.';
 
       const id = this._crypto.randomUUID();
       const createdAt = new Date().toISOString();
