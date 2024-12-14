@@ -1,0 +1,6 @@
+{
+  "backend-service-url": "http://34.101.194.146:3000",
+  "frontend-service-url": "http://submissionmlgc-isalzufari.et.r.appspot.com",
+  "project-id": "submissionmlgc-isalzufari",
+  "bucket-name": " model-storage-production-isalzufari"
+}

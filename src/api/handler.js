@@ -11,11 +11,11 @@ class PredictsHandler {
 
     const data = await this._predictUseCase.execute({ model, image })
 
-    return ({
+    return h.response({
       status: 'success',
       message: 'Model is predicted successfully',
       data,
-    });
+    }).code(201);
   }
 }
 

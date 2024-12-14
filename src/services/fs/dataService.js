@@ -5,7 +5,7 @@ const db = new Firestore();
 
 async function storeData({ id, data }) {
   try {
-    console.log('masuk');
+    console.log('storeData');
     const predictCollection = db.collection('predictions');
     await predictCollection.doc(id).set(data);
     return { success: true };
